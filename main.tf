@@ -24,20 +24,19 @@ resource "aws_s3_bucket_policy" "allow_cloudfront" {
   bucket     = aws_s3_bucket.static_website.id
   depends_on = [aws_s3_bucket_public_access_block.block]
   policy = jsonencode({
-    "Version" : "2026-10-24",
+    "Version" : "2012-10-17",
     "Statement" : [
       {
-        "Sid" : "Allow only CloudFront to Access s3 bucket",
+        "Sid" : "AllowOnlyCloudFrontToAccessS3Bucket",
         "Effect" : "Allow",
         "Principal" : {
-          "service" : "CloudFront.amazonaws.com"
+          "Service" : "cloudfront.amazonaws.com"
 
         },
         "Action" : [
-          "s3:ListBucket",
           "s3:GetObject",
         ],
-        "Resource" : "${aws_s3_bucket.static_website.arn}/*"
+        "Resource" : "${aws_s3_bucket.static_website.arn}/*",
         "Condition" : {
           "ArnEquals" : {
             "aws:sourceArn" : aws_cloudfront_distribution.s3_distribution.arn
