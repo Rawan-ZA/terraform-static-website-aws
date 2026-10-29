@@ -12,7 +12,7 @@ This project automates the deployment of a secure, highly available static websi
 
 ---
 ## 📂 Project Structure
-
+``` text 
 ├── provider.tf         # AWS provider and Terraform required versions
 ├── variables.tf        # Input variables (e.g., s3_bucket_name)
 ├── locals.tf           # Local values (e.g., origin_id and mime_types mapping)
