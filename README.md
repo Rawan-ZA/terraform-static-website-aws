@@ -1,4 +1,4 @@
-# 🚀 AWS Static Website Hosting with Terraform, S3, and CloudFront (OAC)
+## 🚀 AWS Static Website Hosting with Terraform, S3, and CloudFront (OAC)
 
 This project automates the deployment of a secure, highly available static website on AWS using **Terraform**. It implements modern AWS security best practices by completely blocking public access to the S3 bucket and routing all traffic exclusively through **Amazon CloudFront** using **Origin Access Control (OAC)**.
 
