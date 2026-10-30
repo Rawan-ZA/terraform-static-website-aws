@@ -16,7 +16,7 @@ This project automates the deployment of a secure, highly available static websi
 
 The following architecture diagram illustrates the end-to-end request flow and security implementations of the static website infrastructure:
 
-![AWS Static Website Architecture](docs/static-website.png)
+![AWS Static Website Architecture](assets/static-website.png)
 
 * **Request Flow:** Global users resolve the domain via **Route53**, which routes traffic to **CloudFront Distribution** (protected by **AWS WAF**). 
 * **Secure Origin Access:** CloudFront communicates securely with the **S3 Bucket** using **Origin Access Control (OAC)** and AWS Signature Version 4 (SigV4), while the bucket enforces strict public access blocking and resource policies.
