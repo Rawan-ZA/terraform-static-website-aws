@@ -1,13 +1,18 @@
 terraform {
-	required_providers {
-		aws = {
-			source  = "hashicorp/aws"
-			version = ">= 5.0"
-		}
-	}
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 5.0"
+    }
+  }
 }
 
 provider "aws" {
-	region = "us-east-1"
-    profile = "add account name"
+  region  = "us-east-1"
+  profile = "ima user name"
+}
+provider "aws" {
+  alias   = "us_east_1"
+ 
+   region  = "us-east-1"
 }
